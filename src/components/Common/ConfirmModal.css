@@ -1,0 +1,146 @@
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-confirm {
+  background: linear-gradient(180deg, var(--blud) 0%, var(--blub) 100%);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  max-width: 400px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+}
+
+/* Tipos de confirmación - solo borde */
+.modal-confirm-info {
+  border: 2px solid var(--blu);
+}
+
+.modal-confirm-warning {
+  border: 2px solid var(--yy);
+}
+
+.modal-confirm-danger {
+  border: 2px solid var(--rr);
+}
+
+.confirm-message {
+  color: var(--white);
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  padding: 0 10px;
+}
+
+.confirm-buttons-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Estilos base de los botones */
+.confirm-button-cancel,
+.confirm-button-confirm {
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+/* Botón de confirmar por tipo */
+.confirm-button-info {
+  background: var(--blu);
+  color: var(--white);
+}
+
+.confirm-button-warning {
+  background: var(--yy);
+  color: var(--white);
+}
+
+.confirm-button-danger {
+  background: var(--rr);
+  color: var(--white);
+}
+
+/* Botón de cancelar por tipo */
+.confirm-button-info-cancel {
+  background: var(--blud);
+  color: var(--white);
+  border: 1px solid var(--blu);
+}
+
+.confirm-button-warning-cancel {
+  background: var(--blud);
+  color: var(--white);
+  border: 1px solid var(--yy);
+}
+
+.confirm-button-danger-cancel {
+  background: var(--blud);
+  color: var(--white);
+  border: 1px solid var(--rr);
+}
+
+/* Hover effects */
+.confirm-button-info:hover {
+  transform: translateY(-2px);
+}
+
+.confirm-button-warning:hover {
+  transform: translateY(-2px);
+}
+
+.confirm-button-danger:hover {
+  transform: translateY(-2px);
+}
+
+.confirm-button-info-cancel:hover {
+  background: var(--blu);
+  transform: translateY(-2px);
+}
+
+.confirm-button-warning-cancel:hover {
+  background: var(--yy);
+  transform: translateY(-2px);
+}
+
+.confirm-button-danger-cancel:hover {
+  background: var(--rr);
+  transform: translateY(-2px);
+}
+
+.confirm-button-cancel:active,
+.confirm-button-confirm:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-confirm {
+  animation: slideUp 0.3s ease;
+}

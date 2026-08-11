@@ -1,0 +1,118 @@
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-notification {
+  background: linear-gradient(180deg, var(--blud) 0%, var(--blub) 100%);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  max-width: 400px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+}
+
+/* Tipos de notificación - solo borde */
+.modal-notification-info {
+  border: 2px solid var(--blu);
+}
+
+.modal-notification-success {
+  border: 2px solid var(--blu);
+}
+
+.modal-notification-error {
+  border: 2px solid var(--rr);
+}
+
+.modal-notification-warning {
+  border: 2px solid var(--yy);
+}
+
+.notification-message {
+  color: var(--white);
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+/* Estilos base del botón */
+.notification-close-button {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  color: var(--blub);
+}
+
+/* Botones por tipo */
+.notification-button-info {
+  background: var(--blu);
+}
+
+.notification-button-success {
+  background: var(--blu);
+}
+
+.notification-button-error {
+  background: var(--rr);
+}
+
+.notification-button-warning {
+  background: var(--yy);
+}
+
+/* Hover effects */
+.notification-button-info:hover {
+  background: var(--blub);
+  transform: translateY(-2px);
+}
+
+.notification-button-success:hover {
+  background: var(--bludd);
+  transform: translateY(-2px);
+}
+
+.notification-button-error:hover {
+  background: #e74c3c;
+  transform: translateY(-2px);
+}
+
+.notification-button-warning:hover {
+  background: #f39c12;
+  transform: translateY(-2px);
+}
+
+.notification-close-button:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-notification {
+  animation: slideUp 0.3s ease;
+}
